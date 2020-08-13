@@ -1,12 +1,41 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { UI } from '@nexys/material-components';
-export default () => (
-  <>
-    <h2>Login</h2>
-    <ul>
-      <li>
-        <UI.Link to={'/app'}>to app</UI.Link>
-      </li>
-    </ul>
-  </>
-);
+
+const { Layout, Business } = UI;
+
+interface LoginResponse {
+  uuid: string;
+}
+
+export default () => {
+  const [redirect, setRedirect] = React.useState<string | undefined>(undefined);
+
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
+
+  return (
+    <Layout.Login title={'Boilerplate'}>
+      <Business.Login.Error name="notifLogout">
+        You were successfully logged out.
+      </Business.Login.Error>
+
+      <Layout.Title title={'Login to Nexys'} type="groupTitle" />
+
+      <Business.Login.Login<LoginResponse>
+        onSuccess={(r: LoginResponse) => {
+          //alert(`form submitted and user with uuid "${r.uuid}" found`);
+          setRedirect('/app');
+        }}
+        onSubmit={x => {
+          if (x.email === 'john@doe.com') {
+            return Promise.resolve({ uuid: 'my uuid' });
+          }
+
+          return Promise.reject({ errors: { email: ['my uuid'] } });
+        }}
+      />
+    </Layout.Login>
+  );
+};

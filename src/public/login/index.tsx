@@ -23,6 +23,14 @@ export default () => {
 
       <Layout.Title title={'Login to Nexys'} type="groupTitle" />
 
+      <p>
+        <small>
+          <i>
+            enter <code>john@doe.com</code> as email
+          </i>
+        </small>
+      </p>
+
       <Business.Login.Login<LoginResponse>
         onSuccess={(r: LoginResponse) => {
           //alert(`form submitted and user with uuid "${r.uuid}" found`);

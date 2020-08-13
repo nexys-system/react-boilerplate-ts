@@ -9,6 +9,7 @@ import {
 
 import Layout from './layout';
 import Dashboard from './dashboard';
+import Crud from './crud';
 
 const routePrefix = '/app';
 
@@ -23,6 +24,7 @@ function App(props: RouteComponentProps) {
           component={Dashboard}
           props={props}
         />
+        <Route path={toRoute('/crud')} component={Crud} props={props} />
         <Route
           path={toRoute('/')}
           component={() => <Redirect to={'/app/dashboard'} />}

@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { Dashboard as DashboardIcon } from '@material-ui/icons';
+import {
+  Dashboard as DashboardIcon,
+  Build as CrudIcon
+} from '@material-ui/icons';
 
 import { UI } from '@nexys/material-components';
 
@@ -23,6 +26,12 @@ const listMain: TMenu[] = [
     label: 'Dashboard',
     Icon: DashboardIcon,
     permission: 'dashboard'
+  },
+  {
+    link: '/app/crud',
+    label: 'Crud',
+    Icon: CrudIcon,
+    permission: 'crud'
   }
 ];
 

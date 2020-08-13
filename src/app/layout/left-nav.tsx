@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Dashboard as DashboardIcon } from '@material-ui/icons';
 
-import { UI, Stateful } from '@nexys/material-components';
+import { UI } from '@nexys/material-components';
 
 const {
   Nav: {
-    Left: { Drawer, Menu, Divider }
+    Left: { Drawer, Menu }
   }
 } = UI;
 

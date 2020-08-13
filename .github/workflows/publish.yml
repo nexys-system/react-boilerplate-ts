@@ -21,7 +21,7 @@ jobs:
       - name: Build page
         run: PUBLIC_URL=/react-nexys-boilerplate npm run build
       - name: add 404
-        run: cp index.html 404.html
+        run: cp build/index.html build/404.html
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:

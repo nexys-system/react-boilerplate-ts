@@ -17,7 +17,9 @@ import Signup from './public/signup';
 
 import Logout from './public/logout';
 
-const history = History.createBrowserHistory();
+const history = History.createBrowserHistory({
+  basename: process.env.PUBLIC_URL || ''
+});
 
 const MyRouter = (props: RouteComponentProps) => {
   return (

@@ -2,7 +2,8 @@ import React from 'react';
 
 import {
   Dashboard as DashboardIcon,
-  Build as CrudIcon
+  Build as CrudIcon,
+  Block as UnauthorizedPage
 } from '@material-ui/icons';
 
 import { UI } from '@nexys/material-components';
@@ -17,21 +18,24 @@ interface TMenu {
   link: string;
   label: string;
   Icon: any;
-  permission: string;
+  permission?: string;
 }
 
 const listMain: TMenu[] = [
   {
     link: '/app/dashboard',
     label: 'Dashboard',
-    Icon: DashboardIcon,
-    permission: 'dashboard'
+    Icon: DashboardIcon
   },
   {
     link: '/app/crud',
     label: 'Crud',
-    Icon: CrudIcon,
-    permission: 'crud'
+    Icon: CrudIcon
+  },
+  {
+    link: '/app/unauth',
+    label: 'Unauthorized Page',
+    Icon: UnauthorizedPage
   }
 ];
 

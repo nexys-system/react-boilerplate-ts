@@ -12,10 +12,7 @@ import * as History from 'history';
 import { SnackbarProvider } from '@nexys/material-components';
 
 import App from './app';
-import Login from './public/login';
-import Signup from './public/signup';
-
-import Logout from './public/logout';
+import Public from './public';
 
 const history = History.createBrowserHistory({
   basename: process.env.PUBLIC_URL || ''
@@ -26,9 +23,7 @@ const MyRouter = (props: RouteComponentProps) => {
     <SnackbarProvider maxSnack={3}>
       <Switch>
         <Route path="/app" component={App} props={props} />
-        <Route path="/logout" component={Logout} props={props} />
-        <Route path="/signup" component={Signup} props={props} />
-        <Route path="/" component={Login} props={props} />
+        <Route path="/" component={Public} props={props} />
       </Switch>
     </SnackbarProvider>
   );

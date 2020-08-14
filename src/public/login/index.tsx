@@ -2,11 +2,10 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { UI } from '@nexys/material-components';
 
-const { Layout, Business } = UI;
+import * as T from 'interface/login/type';
+import * as D from 'interface/login';
 
-interface LoginResponse {
-  uuid: string;
-}
+const { Layout, Business } = UI;
 
 export default () => {
   const [redirect, setRedirect] = React.useState<string | undefined>(undefined);
@@ -31,17 +30,13 @@ export default () => {
         </small>
       </p>
 
-      <Business.Login.Login<LoginResponse>
-        onSuccess={(r: LoginResponse) => {
+      <Business.Login.Login<T.LoginResponse>
+        onSuccess={(r: T.LoginResponse) => {
           //alert(`form submitted and user with uuid "${r.uuid}" found`);
           setRedirect('/app');
         }}
         onSubmit={x => {
-          if (x.email === 'john@doe.com') {
-            return Promise.resolve({ uuid: 'my uuid' });
-          }
-
-          return Promise.reject({ errors: { email: ['my uuid'] } });
+          return D.authenticate(x);
         }}
       />
     </Layout.Login>

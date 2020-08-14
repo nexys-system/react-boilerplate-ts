@@ -1,5 +1,4 @@
 import React from 'react';
-// import makeStyles from '@material-ui/core/styles/makeStyles';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -16,8 +15,10 @@ const useStyles = Utils.makeStyles(theme => ({
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    height: '100vh',
     overflow: 'auto'
+  },
+  main: {
+    minHeight: `calc(100vh - 72px)` // we need to subtract the height of footer
   },
   container: {
     paddingTop: theme.spacing(4),
@@ -26,7 +27,7 @@ const useStyles = Utils.makeStyles(theme => ({
 }));
 
 interface Props {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 function Layout(props: Props) {
@@ -42,15 +43,17 @@ function Layout(props: Props) {
       <TopNav isOpen={open} onToggle={() => setOpen(!open)} />
       <LeftNav isOpen={open} onClose={() => setOpen(false)} />
 
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
+      <div className={classes.content}>
+        <main className={classes.main}>
+          <div className={classes.appBarSpacer} />
 
-        <Container maxWidth="lg" className={classes.container}>
-          {children}
-        </Container>
+          <Container maxWidth="lg" className={classes.container}>
+            {children}
+          </Container>
+        </main>
 
         <Footer />
-      </main>
+      </div>
     </div>
   );
 }

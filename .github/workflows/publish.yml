@@ -19,6 +19,7 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Build page
+        run: echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
         run: REACT_APP_GIT_SHA=$GITHUB_SHA_SHORT PUBLIC_URL=/react-nexys-boilerplate npm run build
       - name: add 404
         run: cp build/index.html build/404.html

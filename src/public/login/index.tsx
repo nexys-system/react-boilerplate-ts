@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { UI } from '@nexys/material-components';
-
+import * as Link from 'common/link';
 import * as T from 'interface/login/type';
 import * as D from 'interface/login';
 
@@ -39,6 +39,10 @@ export default () => {
           return D.authenticate(x);
         }}
       />
+
+      <p>
+        <UI.Link to={Link.Public.signup}>to signup</UI.Link>
+      </p>
     </Layout.Login>
   );
 };

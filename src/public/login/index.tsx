@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { UI } from '@nexys/material-components';
+import { appTitle } from 'config/index';
 import * as Link from 'common/link';
 import * as T from 'interface/login/type';
 import * as D from 'interface/login';
@@ -15,7 +16,7 @@ export default () => {
   }
 
   return (
-    <Layout.Login title={'Boilerplate'}>
+    <Layout.Login title={appTitle}>
       <Business.Login.Error name="notifLogout">
         You were successfully logged out.
       </Business.Login.Error>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { appTitle } from 'config/index';
 
 import {
   ExitToApp as LogoutIcon,
@@ -19,7 +20,7 @@ const useStyles = Utils.makeStyles(theme => ({
 
 export default (props: { isOpen: boolean; onToggle: any }) => {
   const { isOpen, onToggle } = props;
-  const title = 'Boilerplate';
+
   const menus = [
     { link: '/app/profile', Icon: UserIcon },
     { link: '/logout', Icon: LogoutIcon }
@@ -28,7 +29,7 @@ export default (props: { isOpen: boolean; onToggle: any }) => {
 
   return (
     <Top
-      title={title}
+      title={appTitle}
       menus={menus}
       isOpen={isOpen}
       onToggle={onToggle}

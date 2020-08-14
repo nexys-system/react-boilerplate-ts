@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Link } from '@material-ui/core';
 import { Utils } from '@nexys/material-components';
+import { appTitle } from 'config/index';
 
 const useStyles = Utils.makeStyles(theme => ({
   footer: {
@@ -18,7 +19,7 @@ const Footer = () => {
       <Typography variant="body2" color="textSecondary" align="center">
         Copyright ©{' '}
         <Link color="inherit" href="">
-          BPMS MDM
+          {appTitle}
         </Link>
         {` ${new Date().getFullYear()}`}
         <br />

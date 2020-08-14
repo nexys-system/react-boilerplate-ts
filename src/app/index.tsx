@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Switch,
-  Route,
-  Redirect,
-  withRouter,
-  RouteComponentProps
-} from 'react-router-dom';
+import { Switch, Route, Redirect, RouteComponentProps } from 'react-router-dom';
 
 import Layout from './layout';
 import Dashboard from './dashboard';
@@ -13,27 +7,19 @@ import Crud from './crud';
 import Profile from './profile';
 import authWrapper from '../common/auth/wrapper';
 
-const routePrefix = '/app';
+import * as Links from 'common/link';
 
-const toRoute = (r = '/') => routePrefix + r;
-
-const UnauthorizedPage = (props: RouteComponentProps) => (
-  <p>This content is unauthorized</p>
-);
+const UnauthorizedPage = () => <p>This content is unauthorized</p>;
 
 function App(props: RouteComponentProps) {
   return (
     <Layout>
       <Switch>
+        <Route path={Links.App.dashboard} component={Dashboard} props={props} />
+        <Route path={Links.App.crud} component={Crud} props={props} />
+        <Route path={Links.App.profile} component={Profile} props={props} />
         <Route
-          path={toRoute('/dashboard')}
-          component={Dashboard}
-          props={props}
-        />
-        <Route path={toRoute('/crud')} component={Crud} props={props} />
-        <Route path={toRoute('/profile')} component={Profile} props={props} />
-        <Route
-          path={toRoute('/unauth')}
+          path={Links.App.unauthorizedPage}
           component={authWrapper(
             UnauthorizedPage,
             'permissionThatDoesNotExist'
@@ -41,8 +27,8 @@ function App(props: RouteComponentProps) {
           props={props}
         />
         <Route
-          path={toRoute('/')}
-          component={() => <Redirect to={'/app/dashboard'} />}
+          path={Links.App.default}
+          component={() => <Redirect to={Links.App.dashboard} />}
         />
       </Switch>
     </Layout>

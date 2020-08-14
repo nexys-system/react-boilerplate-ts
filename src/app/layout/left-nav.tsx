@@ -8,6 +8,8 @@ import {
 
 import { UI } from '@nexys/material-components';
 
+import * as Link from 'common/link';
+
 const {
   Nav: {
     Left: { Drawer, Menu }
@@ -23,17 +25,17 @@ interface TMenu {
 
 const listMain: TMenu[] = [
   {
-    link: '/app/dashboard',
+    link: Link.App.dashboard,
     label: 'Dashboard',
     Icon: DashboardIcon
   },
   {
-    link: '/app/crud',
+    link: Link.App.crud,
     label: 'Crud',
     Icon: CrudIcon
   },
   {
-    link: '/app/unauth',
+    link: Link.App.unauthorizedPage,
     label: 'Unauthorized Page',
     Icon: UnauthorizedPage
   }

@@ -20,11 +20,14 @@
     "@types/jest": "^25.2.1",
     "@types/react-router-dom": "^5.1.3",
     "@types/styled-components": "^5.0.1",
+    "customize-cra": "^1.0.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
-    "jest-styled-components": "^7.0.1"
+    "jest-styled-components": "^7.0.1",
+    "react-app-rewired": "^2.1.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-CRA": "react-scripts start",
+    "start": "react-app-rewired start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject"

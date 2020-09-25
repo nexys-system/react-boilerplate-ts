@@ -28,8 +28,8 @@
   "scripts": {
     "start-CRA": "react-scripts start",
     "start": "react-app-rewired start",
-    "build-cra": "react-scripts build",
-    "build": "react-app-rewired build",
+    "build": "react-scripts build",
+    "build2": "react-app-rewired build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject"
   },

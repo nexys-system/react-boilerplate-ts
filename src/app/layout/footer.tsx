@@ -10,6 +10,7 @@ const useStyles = Utils.makeStyles(theme => ({
 }));
 
 const gitsha: string = process.env.REACT_APP_GIT_SHA || 'GIT SHA';
+const gitshaLink:string = 'https://github.com/nexys-system/react-boilerplate-ts/commit/' + gitsha;
 
 const Footer = () => {
   const classes = useStyles();
@@ -23,7 +24,7 @@ const Footer = () => {
         </Link>
         {` ${new Date().getFullYear()}`}
         <br />
-        <small>{gitsha}</small>
+        <small><a href={gitshaLink}>{gitsha}</a></small>
       </Typography>
     </footer>
   );

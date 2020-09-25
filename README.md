@@ -2,7 +2,6 @@
 
 [![Test Package](https://github.com/nexys-system/react-boilerplate-ts/workflows/Test%20Package/badge.svg)](https://github.com/nexys-system/react-boilerplate-ts/actions?query=workflow%3A%22Test+Package%22)
 [![Deployment](https://github.com/nexys-system/react-boilerplate-ts/workflows/Deployment/badge.svg)](https://github.com/nexys-system/react-boilerplate-ts/actions?query=workflow%3ADeployment)
-
 [![Build Status](https://travis-ci.com/nexys-system/react-boilerplate-ts.svg?token=GXhUFkjWzYy6w9V29DXe&branch=master)](https://travis-ci.com/nexys-system/react-boilerplate-ts)
 
 Boilerplate for using Nexys System for React, based on CRA.

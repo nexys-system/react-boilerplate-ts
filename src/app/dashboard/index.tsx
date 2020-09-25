@@ -14,7 +14,7 @@ export default () => (
 
     <p>
       Source
-      <a href={'https://github.com/Nexysweb/react-nexys-boilerplate'}>
+      <a href={'https://github.com/nexys-system/react-boilerplate-ts'}>
         <IconButton>
           <GitHubIcon />
         </IconButton>

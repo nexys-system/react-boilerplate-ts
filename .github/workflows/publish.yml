@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [13.x]
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -21,9 +21,9 @@ jobs:
           echo "GITHUB_SHA=$GITHUB_SHA"
           echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
       - name: Install Packages
-        run: npm install
+        run: yarn install
       - name: Build page
-        run: REACT_APP_GIT_SHA=$GITHUB_SHA PUBLIC_URL=/react-nexys-boilerplate SKIP_PREFLIGHT_CHECK=true npm run build
+        run: REACT_APP_GIT_SHA=$GITHUB_SHA PUBLIC_URL=/react-nexys-boilerplate SKIP_PREFLIGHT_CHECK=true yarn build
       - name: add 404
         run: cp build/index.html build/404.html
       - name: Deploy to gh-pages

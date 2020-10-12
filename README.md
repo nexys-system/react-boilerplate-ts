@@ -11,3 +11,10 @@ Boilerplate for using Nexys System for React, based on CRA.
 1. fork repo
 2. `yarn install`
 3. `yarn start`
+
+## Resources
+
+### Theming
+
+* MUI Theme builder - https://bareynol.github.io/mui-theme-creator/#Buttons
+* MUI list of open source themes (e.g. Pearson) https://github.com/mui-org/material-ui/issues/21113

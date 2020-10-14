@@ -2,7 +2,7 @@
   "name": "nexys-boilerplate",
   "version": "0.0.1",
   "dependencies": {
-    "@nexys/material-components": "^3.3.3",
+    "@nexys/material-components": "^3.1.10",
     "@types/node": "^14.0.27",
     "@types/react-dom": "^16.9.8",
     "history": "^4.10.1",

@@ -12,7 +12,7 @@ interface Props {
 
 interface CustomRenderOptions {
   route?: string;
-  history?: MemoryHistory<History.PoorMansUnknown>;
+  history?: MemoryHistory<any>;
 }
 
 const customRender = (

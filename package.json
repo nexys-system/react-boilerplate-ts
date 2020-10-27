@@ -3,33 +3,27 @@
   "version": "0.0.1",
   "dependencies": {
     "@nexys/material-components": "^3.1.10",
-    "@types/node": "^14.0.27",
     "@types/react-dom": "^16.9.8",
-    "history": "^4.10.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router": "^5.1.2",
+    "@types/react-router-dom": "^5.1.6",
+"react": "^16.13.1",
+"react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.2",
-    "styled-components": "^4.4.1",
-    "typescript": "^3.7.5"
+
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
+    "react-scripts": "^3.4.3",
+    "typescript": "^3.9.3",
     "@testing-library/jest-dom": "^5.3.0",
     "@testing-library/react": "^10.0.2",
     "@types/jest": "^25.2.1",
-    "@types/react-router-dom": "^5.1.3",
     "@types/styled-components": "^5.0.1",
-    "customize-cra": "^1.0.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
-    "jest-styled-components": "^7.0.1",
-    "react-app-rewired": "^2.1.6"
+    "jest-styled-components": "^7.0.1"
   },
   "scripts": {
-    "start-CRA": "react-scripts start",
-    "start": "react-app-rewired start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "build2": "react-app-rewired build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject"
   },

@@ -11,15 +11,15 @@ const View = (props: { data: Profile }) => {
   const { data } = props;
   return (
     <>
-      <UI.ViewWrapper label="First Name">
+      <UI.View.Wrapper label="First Name">
         <Typography>{data.firstName}</Typography>
-      </UI.ViewWrapper>
-      <UI.ViewWrapper label="Last Name">
+      </UI.View.Wrapper>
+      <UI.View.Wrapper label="Last Name">
         <Typography>{data.lastName}</Typography>
-      </UI.ViewWrapper>
-      <UI.ViewWrapper label="Email">
+      </UI.View.Wrapper>
+      <UI.View.Wrapper label="Email">
         <Typography>{data.email}</Typography>
-      </UI.ViewWrapper>
+      </UI.View.Wrapper>
     </>
   );
 };

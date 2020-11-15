@@ -21,7 +21,7 @@ export default () => {
 
       <ul>
         <li>
-          <UI.Button onClick={() => history.goBack()} label={'Back'} />
+          <UI.Buttons.Button onClick={() => history.goBack()} label={'Back'} />
         </li>
         <li>
           <UI.Link to={'/login'}>Login</UI.Link>

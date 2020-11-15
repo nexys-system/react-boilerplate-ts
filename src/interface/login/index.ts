@@ -3,7 +3,6 @@ import * as ProfileMock from '../profile/mock-data';
 import { Stateful } from '@nexys/material-components';
 
 const mockLoginResponse = {
-  token: 'mytoken',
   profile: ProfileMock.profile,
   permissions: ['app', 'anotherpermission'],
   lang: 'en'
@@ -18,11 +17,11 @@ export const authenticate = async (
     return Promise.reject({ errors: { email: ['my uuid'] } });
   }
 
-  const { token, profile, permissions, lang } = await Promise.resolve(
+  const { profile, permissions, lang } = await Promise.resolve(
     mockLoginResponse
   );
 
-  Stateful.Credentials.set(token, profile, permissions, lang);
+  Stateful.Credentials.set(profile, permissions, lang);
 
   return { uuid: 'myuuid' };
 };

@@ -2,13 +2,12 @@
   "name": "nexys-boilerplate",
   "version": "0.0.1",
   "dependencies": {
-    "@nexys/material-components": "^3.4.2",
+    "@nexys/material-components": "^3.4.7",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
-"react": "^16.13.1",
-"react-dom": "^16.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

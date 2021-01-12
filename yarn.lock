@@ -1513,10 +1513,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nexys/material-components@^3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@nexys/material-components/-/material-components-3.4.2.tgz#22f51137119783da03651b334b4ca9898496300c"
-  integrity sha512-aQRBkjRtOAtbzywdcGdvYaKHOQ4FhFtFxiRMjhyC1M09xGTodYxG/qADwt1sp0aWkuxWO2sRz9e1ceEjyTw5yg==
+"@nexys/material-components@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@nexys/material-components/-/material-components-4.0.0.tgz#9d9c364dd72f95069d1a6d2fdb1698507b17243d"
+  integrity sha512-aonDGaqc67XkAyO3aGGY1sDrKeXmjHZupyb3rOeHL7l9gq64zkTmyI0llFhSY7cxzsVnFQwBVhRbJ7qSW88DEg==
   dependencies:
     "@date-io/date-fns" "1.x"
     "@material-ui/core" "^4.9.7"
@@ -1525,6 +1525,7 @@
     "@material-ui/pickers" "^3.2.10"
     "@material-ui/styles" "^4.9.13"
     "@nexys/mui-list" "^2.4.0"
+    "@nexys/react-map" "^0.1.0"
     "@nexys/react-stateful" "^0.2.0"
     "@nexys/utils" "^3.9.13"
     "@types/react" "^16.9.0"
@@ -1534,9 +1535,11 @@
     chart.js "^2.9.3"
     date-fns "^2.14.0"
     notistack "^0.9.11"
+    qrcode.react "^1.0.0"
     react "^16.13.1"
     react-chartjs-2 "^2.9.0"
     react-dom "^16.13.1"
+    react-idle-timer "^4.5.0"
     react-router-dom "^5.1.2"
     react-scripts "^3.4.3"
     styled-components "^5.1.0"
@@ -1547,6 +1550,13 @@
   integrity sha512-YTSYZZdu3kV2tGs2zaQm1aEfHmVMpPHyoP/9pNYzXvoyJAjf1hQTPImu5AzRn9eeb3KjGEzEkwIpyLNIx6AX8A==
   dependencies:
     "@nexys/utils" "^3.7.13"
+
+"@nexys/react-map@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@nexys/react-map/-/react-map-0.1.0.tgz#38fcf78609304720df1b0f960806c15aeef2017e"
+  integrity sha512-sqsRm/DVNWf725/iBN7hjR+vzRvGkVQwA1lv9DJKZGjjGBxNGdiXU4Csd+mYIZp9m1YXPc0OkY1Br1zOEqLW8A==
+  dependencies:
+    "@nexys/utils" "^3.9.0"
 
 "@nexys/react-stateful@^0.2.0":
   version "0.2.0"
@@ -1565,7 +1575,7 @@
     react-router-dom "^5.2.0"
     store "^2.0.12"
 
-"@nexys/utils@^3.7.13", "@nexys/utils@^3.9.13", "@nexys/utils@^3.9.3":
+"@nexys/utils@^3.7.13", "@nexys/utils@^3.9.0", "@nexys/utils@^3.9.13", "@nexys/utils@^3.9.3":
   version "3.9.13"
   resolved "https://registry.yarnpkg.com/@nexys/utils/-/utils-3.9.13.tgz#74f7c0af2182b81d642b18e21f07593823a24e9d"
   integrity sha512-y9DxSwhN8JZgm8fLd+LNprSTFp981zpphvSbALtIC0OQj8eu2quo3Mcby8ewyaUN1VGvjdVK8N9Fqsaa9fvCHg==
@@ -9221,7 +9231,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9304,6 +9314,20 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qr.js@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
+  integrity sha1-ys6GOG9ZoNuAUPqQ2baw6IoeNk8=
+
+qrcode.react@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/qrcode.react/-/qrcode.react-1.0.1.tgz#2834bb50e5e275ffe5af6906eff15391fe9e38a5"
+  integrity sha512-8d3Tackk8IRLXTo67Y+c1rpaiXjoz/Dd2HpcMdW//62/x8J1Nbho14Kh8x974t9prsLHN6XqVgcnRiBGFptQmg==
+  dependencies:
+    loose-envify "^1.4.0"
+    prop-types "^15.6.0"
+    qr.js "0.0.0"
 
 qs@6.7.0:
   version "6.7.0"
@@ -9439,6 +9463,11 @@ react-error-overlay@^6.0.7:
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
+
+react-idle-timer@^4.5.0:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/react-idle-timer/-/react-idle-timer-4.5.1.tgz#ecf13e4b6327f11e2543a4fb730a8457e496339d"
+  integrity sha512-SR1A5XgOfjcXb6JbRHiMremcuLBC1ygkSuMqjwLs98ApM3qfMUfabRgHeXSX7/wK89PF7xRODhm0qQ0hQt+jyw==
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"

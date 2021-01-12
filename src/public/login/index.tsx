@@ -16,7 +16,7 @@ export default () => {
   }
 
   return (
-    <Layout.Login title={appTitle}>
+    <Layout.Login title={appTitle} layout="left">
       <Business.Login.Error name="notifLogout">
         You were successfully logged out.
       </Business.Login.Error>

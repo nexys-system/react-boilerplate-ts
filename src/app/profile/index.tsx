@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core';
 
 import Layout from 'common/layout';
 import * as Data from '../../interface/profile';
+import * as T from '../../interface/profile/type';
 import { Profile } from '../../interface/profile/type';
 
 const View = (props: { data: Profile }) => {
@@ -27,7 +28,7 @@ const View = (props: { data: Profile }) => {
 const List = () => {
   return (
     <Layout title={'Profile'}>
-      <D.Load.WithLoader Component={View} dataLoad={Data.detail()} />
+      <D.Load.WithLoader<T.Profile> Component={View} dataLoad={Data.detail()} />
     </Layout>
   );
 };

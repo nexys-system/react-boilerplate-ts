@@ -27,7 +27,5 @@ export const Public = {
 export const App = {
   default: toRouteApp('/'),
   dashboard: toRouteApp('/dashboard'),
-  crud: toRouteApp('/crud'),
-  profile: toRouteApp('/profile'),
-  unauthorizedPage: toRouteApp('/unauthorizedPage')
+  profile: toRouteApp('/profile')
 };

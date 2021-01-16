@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {
-  Dashboard as DashboardIcon,
-  Build as CrudIcon,
-  Block as UnauthorizedPage
-} from '@material-ui/icons';
+import { Dashboard as DashboardIcon } from '@material-ui/icons';
 
 import { UI } from '@nexys/material-components';
 
@@ -28,16 +24,6 @@ const listMain: TMenu[] = [
     link: Link.App.dashboard,
     label: 'Dashboard',
     Icon: DashboardIcon
-  },
-  {
-    link: Link.App.crud,
-    label: 'Crud',
-    Icon: CrudIcon
-  },
-  {
-    link: Link.App.unauthorizedPage,
-    label: 'Unauthorized Page',
-    Icon: UnauthorizedPage
   }
 ];
 

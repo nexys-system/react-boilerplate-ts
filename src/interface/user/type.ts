@@ -1,9 +1,9 @@
 import { OptionSet, Uuid } from '@nexys/material-components/dist/common/type';
 import * as CT from 'interface/crud/type';
 
-export type UserCrud = Omit<CT.User, 'password' | 'logDateAdded'>;
+export type UserCrud = Omit<CT.User, 'password' | 'logDateAdded' | 'lang'>;
 
-export type User = Omit<UserCrud, 'status' | 'instance'> & {
+export type User = Omit<UserCrud, 'status' | 'instance' | 'lang'> & {
   status: OptionSet;
   instance: Omit<CT.Instance, 'dateAdded'>;
 };

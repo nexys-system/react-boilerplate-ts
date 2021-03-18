@@ -1,6 +1,6 @@
 {
-  "short_name": "Imvesters",
-  "name": "Imvesters: Personal Dashboard",
+  "short_name": "Nexys",
+  "name": "Nexys React Boilerplate",
   "icons": [
     {
       "src": "favicon.ico",

@@ -24,19 +24,4 @@ jobs:
       #- run: yarn test
       - name: Build page
         run: REACT_APP_GIT_SHA=$GITHUB_SHA yarn build
-      - name: Zip build
-        run: |
-          zip -r build.zip build
-      - name: prep SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY_PRIVATE }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          echo "$HOST" > ~/.ssh/known_hosts
-      - name: Publish package
-        run: |
-          scp -o 'StrictHostKeyChecking no' build.zip  root@$HOST:$ZIPFILE
-          ssh root@$HOST << EOF
-            unzip -o $ZIPFILE
-            rm -rf $REMOTE_PATH
-            mv build $REMOTE_PATH
+     

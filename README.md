@@ -1,3 +1,3 @@
-# Imvesters User Dashboard
+# Boilerplate
 
-[![Test and deploy](https://github.com/Nexysweb/imvesters-client-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/Nexysweb/imvesters-client-app/actions/workflows/deploy.yml)
+[![Test and deploy](https://github.com/nexys-system/react-boilerplate-ts/actions/workflows/deploy.yml/badge.svg)](https://github.com/nexys-system/react-boilerplate-ts/actions/workflows/deploy.yml)

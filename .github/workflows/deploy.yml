@@ -1,0 +1,42 @@
+name: Test and deploy
+
+on: [push]
+
+env:
+  HOST: 142.93.169.227
+  REMOTE_PATH: /root/volumes/static/imvesters-app
+  ZIPFILE: imvesters-app.zip
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: env var
+        run: |
+          echo "GITHUB_SHA=$GITHUB_SHA"
+          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+      - name: Install Packages
+        run: yarn install
+      - run: yarn test
+      - name: Build page
+        run: REACT_APP_GIT_SHA=$GITHUB_SHA yarn build
+      - name: Zip build
+        run: |
+          zip -r build.zip build
+      - name: prep SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY_PRIVATE }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "$HOST" > ~/.ssh/known_hosts
+      - name: Publish package
+        run: |
+          scp -o 'StrictHostKeyChecking no' build.zip  root@$HOST:$ZIPFILE
+          ssh root@$HOST << EOF
+            unzip -o $ZIPFILE
+            rm -rf $REMOTE_PATH
+            mv build $REMOTE_PATH

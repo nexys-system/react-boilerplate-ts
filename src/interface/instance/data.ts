@@ -69,5 +69,5 @@ export const deleteById = (id: Id | Uuid): Promise<boolean> => {
     return Promise.resolve(true);
   }
 
-  return Promise.resolve(true);
+  return RequestWrapper(C.deleteByUuid(String(id)));
 };

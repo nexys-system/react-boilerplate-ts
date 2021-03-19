@@ -3,7 +3,7 @@ import { Uuid } from '@nexys/material-components/dist/common/type';
 import * as Crud from '@nexys/react-stateful/dist/request';
 
 import { withBackend } from 'config';
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 
 const CPermissionInstance = new Crud.Crud.CrudRequest<
   Omit<CT.PermissionInstance, 'logDateAdded' | 'logUser'>

@@ -2,7 +2,7 @@ import { Uuid } from '@nexys/material-components/dist/common/type';
 import NUtils from '@nexys/utils';
 
 import { withBackend } from 'config';
-import * as CT from 'interface/crud/type';
+import { File } from 'interface/crud/type';
 import * as U from './utils';
 import * as MockData from './mock-data';
 
@@ -10,7 +10,7 @@ const list = async (
   uuid: Uuid,
   entity: string,
   filters: any
-): Promise<CT.File[]> => {
+): Promise<File[]> => {
   if (!withBackend) {
     return Promise.resolve(MockData.files.map(x => U.postProcessing(x)));
   }
@@ -18,19 +18,19 @@ const list = async (
   return Promise.resolve(MockData.files.map(x => U.postProcessing(x)));
 };
 
-export const listByProperty = (uuid: Uuid): Promise<CT.File[]> => {
+export const listByProperty = (uuid: Uuid): Promise<File[]> => {
   return list(uuid, 'property', { property: { uuid } });
 };
 
-export const listByInvestor = (uuid: Uuid): Promise<CT.File[]> => {
+export const listByInvestor = (uuid: Uuid): Promise<File[]> => {
   return list(uuid, 'investor', { investor: { uuid } });
 };
 
-export const listByTenant = (uuid: Uuid): Promise<CT.File[]> => {
+export const listByTenant = (uuid: Uuid): Promise<File[]> => {
   return list(uuid, 'tenant', { tenant: { uuid } });
 };
 
-export const listByUser = (uuid: Uuid): Promise<CT.File[]> => {
+export const listByUser = (uuid: Uuid): Promise<File[]> => {
   return list(uuid, 'user', { user: { uuid } });
 };
 

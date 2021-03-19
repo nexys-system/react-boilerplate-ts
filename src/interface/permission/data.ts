@@ -2,7 +2,7 @@ import { Id, Uuid } from '@nexys/material-components/dist/common/type';
 import { Stateful } from '@nexys/material-components';
 
 import { withBackend } from 'config';
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 import * as MockData from './mock-data';
 
 const C = new Stateful.RequestUtil.Crud.CrudRequest<CT.Permission>(

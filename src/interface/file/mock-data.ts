@@ -1,6 +1,6 @@
-import * as CT from 'interface/crud/type';
+import { File } from 'interface/crud/type';
 
-export const files: Pick<CT.File, 'uuid' | 'name' | 'contentType'>[] = [
+export const files: Pick<File, 'uuid' | 'name' | 'contentType'>[] = [
   {
     uuid: 'uuid1',
     name: 'First File',

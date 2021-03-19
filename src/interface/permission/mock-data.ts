@@ -1,4 +1,4 @@
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 import * as T from './type';
 
 export const data: CT.Permission[] = [

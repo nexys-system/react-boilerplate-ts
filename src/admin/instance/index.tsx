@@ -22,7 +22,7 @@ const dataInterface: TC.DataInterface<Type.Instance> = {
 };
 
 export const permissionsInterface = (uuid: Uuid) => ({
-  list: () => DataPermissionInstance.listAssign(uuid) as any, // There's 1 mistake in the typing in the package hence we need any
+  list: () => DataPermissionInstance.listAssign(uuid),
   toggle: DataPermissionInstance.toggle
 });
 

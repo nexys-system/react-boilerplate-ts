@@ -3,7 +3,7 @@ import { Uuid } from '@nexys/material-components/dist/common/type';
 import { Stateful } from '@nexys/material-components';
 
 import { withBackend } from 'config';
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 import * as T from './type';
 import * as U from './utils';
 import * as MockData from './mock-data';

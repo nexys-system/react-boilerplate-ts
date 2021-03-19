@@ -1483,10 +1483,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nexys/material-components@^4.4.7":
-  version "4.4.7"
-  resolved "https://registry.yarnpkg.com/@nexys/material-components/-/material-components-4.4.7.tgz#8b6352dfa50785333bafde05b42fb6ad0af8afd2"
-  integrity sha512-dItCRyFOdpw2L6jYR7toGCtMQAKH5/8g7ItTRAXW1Xl4rZc+lb/7zC8+YZVp4YULxlgZPXaVTZk+hGeayMBKGg==
+"@nexys/material-components@^4.4.9":
+  version "4.4.9"
+  resolved "https://registry.yarnpkg.com/@nexys/material-components/-/material-components-4.4.9.tgz#f586ea50b31eec092dc55940ba9c4ccc12f58be8"
+  integrity sha512-UwO7CwH7Q1xkeagQI+Gai7Xm1PRuw7tVUwSabpAbhDUhQ6+dp7PGeviIF408wodffPy2jPqCn3HQthJUWhQUIg==
   dependencies:
     "@date-io/date-fns" "1.x"
     "@material-ui/core" "4.9.10"
@@ -1496,7 +1496,7 @@
     "@material-ui/styles" "^4.9.13"
     "@nexys/mui-list" "^2.4.2"
     "@nexys/react-map" "^0.1.0"
-    "@nexys/react-stateful" "^0.2.7"
+    "@nexys/react-stateful" "^0.3.1"
     "@nexys/utils" "^3.9.13"
     chart.js "^2.9.3"
     date-fns "^2.14.0"
@@ -1523,10 +1523,10 @@
   dependencies:
     "@nexys/utils" "^3.9.0"
 
-"@nexys/react-stateful@^0.2.7":
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/@nexys/react-stateful/-/react-stateful-0.2.7.tgz#c386c732908918708d7ed4a847fd992071c3bdca"
-  integrity sha512-mq3aCzLhpqV9u8qAnF1DV01dIlhnzv6P6nAysyPy+ldMMTczbXns/09nB+kk5uDf6Kg/uE2qgWjTa/3Er4WJQQ==
+"@nexys/react-stateful@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@nexys/react-stateful/-/react-stateful-0.3.1.tgz#c91980a26a110a9c759f204e4d4cdb87787427b9"
+  integrity sha512-1m5a2IxPpOCMOXq3PHYorHPuxQS9cPmohAPtOPV2qH3/fW+HBUKFQ6GKwAtVNiUuxzJpRRbUugC45WHu2aKHPQ==
   dependencies:
     "@nexys/utils" "^3.9.3"
     "@types/node" "^14.0.27"
@@ -1534,7 +1534,6 @@
     "@types/react" "^16.9.44"
     "@types/react-router-dom" "^5.1.5"
     "@types/store" "^2.0.2"
-    axios "^0.19.2"
     node-polyglot "^2.4.0"
     react "^16.13.1"
     react-router-dom "^5.2.0"
@@ -2522,13 +2521,6 @@ aws4@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
-
-axios@^0.19.2:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
-  dependencies:
-    follow-redirects "1.5.10"
 
 axobject-query@^2.0.2:
   version "2.2.0"
@@ -3972,13 +3964,6 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@=3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
-  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
-  dependencies:
-    ms "2.0.0"
-
 debug@^3.1.1, debug@^3.2.5:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.7.tgz#72580b7e9145fb39b6676f9c5e5fb100b934179a"
@@ -5092,13 +5077,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
 
 follow-redirects@^1.0.0:
   version "1.13.2"

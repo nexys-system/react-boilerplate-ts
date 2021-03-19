@@ -2,9 +2,7 @@ import { Id, Uuid } from '@nexys/material-components/dist/common/type';
 import { Stateful } from '@nexys/material-components';
 import { withBackend } from 'config';
 
-import * as CT from 'interface/crud/type';
-import * as T from './type';
-import * as U from './utils';
+import * as CT from 'interface/crud/config';
 import * as MockData from './mock-data';
 
 const C = new Stateful.RequestUtil.Crud.withUuid<CT.Instance>('Instance');
@@ -14,18 +12,16 @@ const {
   }
 } = Stateful;
 
-export const list = async (): Promise<T.Instance[]> => {
+export const list = (): Promise<CT.Instance[]> => {
   if (!withBackend) {
-    return Promise.resolve(MockData.data.map(d => U.postProcessing(d)));
+    return Promise.resolve(MockData.data);
   }
 
-  const re = await RequestWrapper(C.list({ projection: {} }));
-
-  return re.map(d => U.postProcessing(d));
+  return RequestWrapper(C.list({ projection: {} }));
 };
 
 export const insert = async (
-  data: Partial<T.Instance>
+  data: Partial<CT.Instance>
 ): Promise<{ id: Id | Uuid }> => {
   if (!withBackend) {
     return Promise.resolve({ id: 'uuid1' });
@@ -40,17 +36,16 @@ export const insert = async (
   return { id: re.uuid };
 };
 
-export const detail = async (id: Id | Uuid): Promise<T.Instance> => {
+export const detail = (id: Id | Uuid): Promise<CT.Instance> => {
   if (!withBackend) {
     const item = MockData.data.find(x => x.uuid === id);
-    return Promise.resolve(U.postProcessing(item || MockData.data[0]));
+    return Promise.resolve(item || MockData.data[0]);
   }
 
-  const re = await RequestWrapper(C.detail({ uuid: String(id) }));
-  return U.postProcessing(re);
+  return RequestWrapper(C.detail({ uuid: String(id) }));
 };
 
-export const update = (data: Partial<T.Instance>): Promise<boolean> => {
+export const update = (data: Partial<CT.Instance>): Promise<boolean> => {
   if (!withBackend) {
     return Promise.resolve(true);
   }

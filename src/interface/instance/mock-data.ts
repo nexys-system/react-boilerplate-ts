@@ -1,4 +1,4 @@
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 
 export const data: CT.Instance[] = [
   {

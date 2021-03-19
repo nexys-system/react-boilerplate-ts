@@ -1,5 +1,5 @@
 import { OptionSet, Uuid } from '@nexys/material-components/dist/common/type';
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 
 export type UserCrud = Omit<CT.User, 'password' | 'logDateAdded' | 'lang'>;
 

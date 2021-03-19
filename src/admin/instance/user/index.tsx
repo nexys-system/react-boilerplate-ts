@@ -16,7 +16,7 @@ import {
 
 type U = BusinessModule.User.Type.User;
 
-const extra: TC.ExtraUnit<U>[] = [
+const extra = (instanceUuid: Uuid): TC.ExtraUnit<U>[] => [
   {
     title: 'Status',
     Component: (_uuid: Uuid | Id, data: U) => (
@@ -43,7 +43,7 @@ const extra: TC.ExtraUnit<U>[] = [
     Component: uuid => (
       <BusinessModule.User.Permissions<Uuid, Uuid>
         uuid={String(uuid)}
-        permissionInterface={permissionsInterface}
+        permissionInterface={permissionsInterface(instanceUuid)}
       />
     )
   }
@@ -64,7 +64,7 @@ export default ({ uuid }: Props) => (
   <BusinessModule.User.Crud
     urlPrefix={`${Links.SuperAdmin.instance}/${uuid}/Users`}
     dataInterface={dataInterface}
-    extra={extra}
+    extra={extra(uuid)}
   />
 );
 

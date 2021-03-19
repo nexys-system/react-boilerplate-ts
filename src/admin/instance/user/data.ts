@@ -14,10 +14,11 @@ export const dataInterface: TC.DataInterface<UserManagement.Type.User> = {
   deleteById: Data.deleteById
 };
 
-export const permissionsInterface = {
-  list: DataPermission.list,
-  toggle: DataPermission.toggle
-};
+export const permissionsInterface = (instanceUuid: Uuid) => ({
+  list: (userUuid: Uuid) => DataPermission.list(userUuid, instanceUuid),
+  toggle: (userUuid: Uuid, permissionUuid: Uuid, assigned: boolean) =>
+    DataPermission.toggle(userUuid, permissionUuid, assigned, instanceUuid)
+});
 
 export const statusList = Data.statusList();
 

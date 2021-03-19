@@ -2,7 +2,7 @@ import { Uuid } from '@nexys/material-components/dist/common/type';
 import { Stateful } from '@nexys/material-components';
 
 import { instanceUuid, withBackend } from 'config';
-import * as CT from 'interface/crud/type';
+import * as CT from 'interface/crud/config';
 import * as T from './type';
 import * as U from './utils';
 
@@ -13,7 +13,10 @@ const CPermissionInstance = new Stateful.RequestUtil.Crud.CrudRequest<CT.Permiss
   'PermissionInstance'
 );
 
-export const list = async (uuid: Uuid): Promise<T.UserPermission[]> => {
+export const list = async (
+  uuid: Uuid,
+  pInstanceUuid?: Uuid
+): Promise<T.UserPermission[]> => {
   if (!withBackend) {
     return Promise.resolve([
       { id: 'uuid1', name: 'app', assigned: 'uuid1' },
@@ -28,7 +31,7 @@ export const list = async (uuid: Uuid): Promise<T.UserPermission[]> => {
       references: {
         PermissionInstance: {
           projection: { uuid: true, instance: { uuid: true } },
-          filters: { instance: { uuid: instanceUuid } },
+          filters: { instance: { uuid: pInstanceUuid || instanceUuid } },
           references: {
             UserPermission: {
               projection: { uuid: true },
@@ -46,15 +49,17 @@ export const list = async (uuid: Uuid): Promise<T.UserPermission[]> => {
   return U.formatAssigned(
     d.Permission.filter(
       (x: any) =>
-        x.PermissionInstance &&
-        x.PermissionInstance[0].instance.uuid === instanceUuid
+        (x.PermissionInstance &&
+          x.PermissionInstance[0].instance.uuid === pInstanceUuid) ||
+        instanceUuid
     )
   );
 };
 
 export const insert = async (
   userUuid: Uuid,
-  permissionUuid: Uuid
+  permissionUuid: Uuid,
+  pInstanceUuid?: Uuid
 ): Promise<boolean> => {
   if (!withBackend) {
     return Promise.resolve(true);
@@ -62,7 +67,7 @@ export const insert = async (
 
   const permissionInstance = await CPermissionInstance.detail({
     permission: { uuid: permissionUuid },
-    instance: { uuid: instanceUuid }
+    instance: { uuid: pInstanceUuid || instanceUuid }
   });
 
   const data = {
@@ -92,14 +97,21 @@ export const deletePermission = async (
   }).then(_x => false);
 };
 
-export const toggle = async (userUuid: Uuid, id: Uuid, assigned: boolean) => {
+export const toggle = async (
+  userUuid: Uuid,
+  id: Uuid,
+  assigned: boolean,
+  instanceUuid?: Uuid
+) => {
   if (!withBackend) {
     return Promise.resolve(assigned);
   }
+
+  console.log(userUuid, id, assigned);
 
   if (!!assigned) {
     return deletePermission(String(userUuid), id);
   }
 
-  return insert(String(userUuid), id);
+  return insert(String(userUuid), id, instanceUuid);
 };

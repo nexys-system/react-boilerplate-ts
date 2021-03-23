@@ -22,7 +22,7 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Build page
-        run: REACT_APP_GIT_SHA=$GITHUB_SHA PUBLIC_URL=/react-boilerplate-ts yarn build
+        run: REACT_APP_WITH_BACKEND=false REACT_APP_GIT_SHA=$GITHUB_SHA PUBLIC_URL=/react-boilerplate-ts yarn build
       - name: add 404
         run: cp build/index.html build/404.html
       - name: Deploy to gh-pages

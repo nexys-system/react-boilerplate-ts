@@ -1,9 +1,11 @@
 const appBase = '/app';
 const adminBase = '/admin';
+const superAdminBase = '/superadmin';
 const publicBase = '/';
 
 const toRouteApp = (s: string) => appBase + s;
 const toRouteAdmin = (s: string) => adminBase + s;
+const toRouteSuperAdmin = (s: string) => superAdminBase + s;
 const toRoutePublic = (s: string) => publicBase + s;
 
 export const App = {
@@ -22,10 +24,10 @@ export const Admin = {
 };
 
 export const SuperAdmin = {
-  base: adminBase,
-  instance: toRouteAdmin('/instance'),
-  permission: toRouteAdmin('/permission'),
-  entity: toRouteAdmin('/entity')
+  base: superAdminBase,
+  instance: toRouteSuperAdmin('/instance'),
+  permission: toRouteSuperAdmin('/permission'),
+  entity: toRouteSuperAdmin('/entity')
 };
 
 export const Public = {

@@ -10,19 +10,18 @@ import {
 import { Stateful, Utils } from '@nexys/material-components';
 import * as Links from 'common/link';
 
-import Dashboard from './dashboard';
-import User from './user';
-import Profile from './profile';
 import NotFound from '../public/not-found-404';
-
-import Layout from './layout';
+import Layout from '../admin/layout';
+import SuperAdmin from './superadmin';
 
 const {
   Auth: { Wrapper },
   Conf: { REDIRECT_URI }
 } = Stateful;
 
-function Admin(props: RouteComponentProps) {
+const toRoute = (r = '/') => Links.Admin.base + r;
+
+function SuperAdminRoutes(props: RouteComponentProps) {
   const handleOnIdle = () => {
     Stateful.Store.set('sessionExpired', true);
     Stateful.Store.set(REDIRECT_URI, props.location.pathname);
@@ -34,22 +33,15 @@ function Admin(props: RouteComponentProps) {
   return (
     <Layout>
       <Switch>
-        <Route
-          path={Links.Admin.dashboard}
-          component={Dashboard}
-          props={props}
-        />
-        <Route path={Links.Admin.user} component={User} props={props} />
+        <Route path={Links.SuperAdmin.base} component={SuperAdmin} />
 
-        <Route path={Links.Admin.profile} component={Profile} />
-
-        <Route path={`${Links.Admin.base}/`}>
+        <Route path={toRoute('/')}>
           <Redirect to={Links.Admin.dashboard} />
         </Route>
-        <Route path={Links.Admin.base} component={NotFound} />
+        <Route path={toRoute()} component={NotFound} />
       </Switch>
     </Layout>
   );
 }
 
-export default withRouter(Wrapper(Admin, 'admin'));
+export default withRouter(Wrapper(SuperAdminRoutes, 'superadmin'));

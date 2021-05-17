@@ -1483,10 +1483,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nexys/material-components@^4.4.9":
-  version "4.4.9"
-  resolved "https://registry.yarnpkg.com/@nexys/material-components/-/material-components-4.4.9.tgz#f586ea50b31eec092dc55940ba9c4ccc12f58be8"
-  integrity sha512-UwO7CwH7Q1xkeagQI+Gai7Xm1PRuw7tVUwSabpAbhDUhQ6+dp7PGeviIF408wodffPy2jPqCn3HQthJUWhQUIg==
+"@nexys/material-components@^4.4.23":
+  version "4.4.23"
+  resolved "https://registry.yarnpkg.com/@nexys/material-components/-/material-components-4.4.23.tgz#bfa9b6c261772f6da97fdb65460fce1a663bc47e"
+  integrity sha512-uhnfVuIUvp2ZSugS4p1OIatFq1iMfEiHeF09KBpULxrou285744fpvCzoNkdPW9vqR3O7fUou0CPkZBbtL4M4Q==
   dependencies:
     "@date-io/date-fns" "1.x"
     "@material-ui/core" "4.9.10"
@@ -1496,7 +1496,7 @@
     "@material-ui/styles" "^4.9.13"
     "@nexys/mui-list" "^2.4.2"
     "@nexys/react-map" "^0.1.0"
-    "@nexys/react-stateful" "^0.3.1"
+    "@nexys/react-stateful" "^0.3.2"
     "@nexys/utils" "^3.9.13"
     chart.js "^2.9.3"
     date-fns "^2.14.0"
@@ -1523,10 +1523,10 @@
   dependencies:
     "@nexys/utils" "^3.9.0"
 
-"@nexys/react-stateful@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nexys/react-stateful/-/react-stateful-0.3.1.tgz#c91980a26a110a9c759f204e4d4cdb87787427b9"
-  integrity sha512-1m5a2IxPpOCMOXq3PHYorHPuxQS9cPmohAPtOPV2qH3/fW+HBUKFQ6GKwAtVNiUuxzJpRRbUugC45WHu2aKHPQ==
+"@nexys/react-stateful@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@nexys/react-stateful/-/react-stateful-0.3.2.tgz#57c9ad199ac0eb377ba022d8201e45bcfc57c934"
+  integrity sha512-jb5tw4lbFdVtYQcwLAnXGPct7utr3vxdcAeSD9MXZ3iFtSzKjqXDNtnsykME7gbvz01PT9O8Had8YXhPnkUJyg==
   dependencies:
     "@nexys/utils" "^3.9.3"
     "@types/node" "^14.0.27"

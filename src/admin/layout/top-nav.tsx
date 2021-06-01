@@ -2,6 +2,7 @@ import React from 'react';
 import useTheme from '@material-ui/core/styles/useTheme';
 import UserIcon from '@material-ui/icons/Person';
 import LogoutIcon from '@material-ui/icons/ExitToApp';
+import AppsIcon from '@material-ui/icons/Apps';
 
 import { UI, Utils } from '@nexys/material-components';
 import * as Links from 'common/link';
@@ -23,6 +24,7 @@ export default () => {
   const classes = useStyles();
 
   const menus = [
+    { link: Links.App.dashboard, Icon: AppsIcon },
     { link: Links.Admin.profile, Icon: UserIcon },
     { link: Links.Public.logout, Icon: LogoutIcon }
   ];

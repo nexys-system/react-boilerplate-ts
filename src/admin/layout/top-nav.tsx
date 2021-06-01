@@ -2,6 +2,7 @@ import React from 'react';
 import useTheme from '@material-ui/core/styles/useTheme';
 import UserIcon from '@material-ui/icons/Person';
 import LogoutIcon from '@material-ui/icons/ExitToApp';
+import AppsIcon from '@material-ui/icons/Apps';
 
 import { UI, Utils } from '@nexys/material-components';
 import * as Links from 'common/link';
@@ -18,11 +19,17 @@ const useStyles = Utils.makeStyles(theme => ({
   }
 }));
 
-export default () => {
+interface Props {
+  isOpen: boolean;
+  onToggle?: (isOpen: boolean) => void;
+}
+
+export default ({ isOpen, onToggle }: Props) => {
   const theme = useTheme();
   const classes = useStyles();
 
   const menus = [
+    { link: Links.App.dashboard, Icon: AppsIcon },
     { link: Links.Admin.profile, Icon: UserIcon },
     { link: Links.Public.logout, Icon: LogoutIcon }
   ];
@@ -32,8 +39,9 @@ export default () => {
       title={appTitle}
       menus={menus}
       className={classes.appBar}
-      isOpen
+      isOpen={isOpen}
       textColor={theme.palette.primary.main}
+      onToggle={onToggle}
     />
   );
 };

@@ -6,7 +6,8 @@ import {
   Group as InvestorIcon,
   VpnKey as PermissionIcon,
   Storage as InstanceIcon,
-  AccountTree as EntityIcon
+  AccountTree as EntityIcon,
+  Apps as AppsIcon
 } from '@material-ui/icons';
 // end icon
 
@@ -67,6 +68,12 @@ const listMain: TMenu[] = [
 
 const listSuperAdmin: TMenu[] = [
   {
+    link: Link.SuperAdmin.base,
+    label: <Label>Superadmin Dashboard</Label>,
+    Icon: AppsIcon,
+    permission: superAdminPermission
+  },
+  {
     link: Link.SuperAdmin.permission,
     label: <Label>Permissions</Label>,
     Icon: PermissionIcon,
@@ -86,7 +93,11 @@ const listSuperAdmin: TMenu[] = [
   }
 ];
 
-export default () => {
+interface Props {
+  isOpen: boolean;
+}
+
+export default ({ isOpen }: Props) => {
   const classes = useStyles();
 
   // list of permissions from profile
@@ -105,7 +116,7 @@ export default () => {
 
   return (
     <Drawer
-      isOpen={true}
+      isOpen={isOpen}
       onClose={() => {}}
       classNames={{ paper: classes.drawer }}
       hideToggleButton={true}

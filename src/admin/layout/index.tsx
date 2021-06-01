@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import { Utils } from '@nexys/material-components';
 
@@ -32,16 +33,24 @@ interface Props {
 }
 
 function Layout(props: Props) {
+  const [open, setOpen] = useState(true);
+  const matches = useMediaQuery('(min-width:600px)');
   const classes = useStyles();
-
   const { children } = props;
+
+  useEffect(() => {
+    setOpen(matches);
+  }, [matches]);
 
   return (
     <div className={classes.root}>
       <CssBaseline />
 
-      <TopNav />
-      <LeftNav />
+      <TopNav
+        onToggle={!matches ? x => setOpen(!x) : undefined}
+        isOpen={open}
+      />
+      <LeftNav isOpen={open} />
 
       <div className={classes.content}>
         <main className={classes.main}>

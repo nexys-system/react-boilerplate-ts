@@ -19,7 +19,12 @@ const useStyles = Utils.makeStyles(theme => ({
   }
 }));
 
-export default () => {
+interface Props {
+  isOpen: boolean;
+  onToggle?: (isOpen: boolean) => void;
+}
+
+export default ({ isOpen, onToggle }: Props) => {
   const theme = useTheme();
   const classes = useStyles();
 
@@ -34,8 +39,9 @@ export default () => {
       title={appTitle}
       menus={menus}
       className={classes.appBar}
-      isOpen
+      isOpen={isOpen}
       textColor={theme.palette.primary.main}
+      onToggle={onToggle}
     />
   );
 };

@@ -93,7 +93,11 @@ const listSuperAdmin: TMenu[] = [
   }
 ];
 
-export default () => {
+interface Props {
+  isOpen: boolean;
+}
+
+export default ({ isOpen }: Props) => {
   const classes = useStyles();
 
   // list of permissions from profile
@@ -112,7 +116,7 @@ export default () => {
 
   return (
     <Drawer
-      isOpen={true}
+      isOpen={isOpen}
       onClose={() => {}}
       classNames={{ paper: classes.drawer }}
       hideToggleButton={true}
